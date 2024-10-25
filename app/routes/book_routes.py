@@ -30,8 +30,8 @@ def validate_book(book_id):
     try:
         book_id = int(book_id)
     except:
-        response = {"message": f"book {book_id} invalid"}
-        abort(make_response(response , 400))
+        response = ({"message": f"book {book_id} invalid"}, 400)
+        # abort(make_response(response , 400))
 
     for book in books:
         if book.id == book_id:
